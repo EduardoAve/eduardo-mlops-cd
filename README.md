@@ -6,6 +6,9 @@ automáticamente a un endpoint en la nube (**AWS**), con dos ambientes
 independientes —**`dev`** y **`prod`**— para que los usuarios finales interactúen
 con él.
 
+> ✅ **Sistema desplegado y funcional en AWS.** Endpoints en vivo:
+> **dev →** http://100.30.136.144:8501 · **prod →** http://100.30.136.144:8502
+
 El caso de uso es un **clasificador de cáncer de mama** (benigno / maligno)
 servido como una app **Streamlit**. El modelo está en formato **ONNX** y **no se
 versiona en el repositorio**: vive en un bucket de S3 y el pipeline lo descarga
@@ -29,7 +32,7 @@ en cada ejecución.
   └───────────────────────────────────────────────────────────────────────────────────────────┘
         │                                                  │
         ▼ dev                                              ▼ prod
-  http://<EC2_IP>:8501                              http://<EC2_IP>:8502
+  http://100.30.136.144:8501                              http://100.30.136.144:8502
         │                                                  │
         └──────────── cada predicción → append a ──────────┘
                    s3://<bucket>/predicciones_dev.txt  |  predicciones_prod.txt
@@ -77,8 +80,8 @@ en cada ejecución.
 
 | Rama | Ambiente | Endpoint | Archivo de log |
 | --- | --- | --- | --- |
-| `dev` | desarrollo | `http://<EC2_IP>:8501` | `predicciones_dev.txt` |
-| `prod` | producción | `http://<EC2_IP>:8502` | `predicciones_prod.txt` |
+| `dev` | desarrollo | `http://100.30.136.144:8501` | `predicciones_dev.txt` |
+| `prod` | producción | `http://100.30.136.144:8502` | `predicciones_prod.txt` |
 
 Cada push a una rama dispara el pipeline, que despliega al endpoint de ese
 ambiente. Así, `dev` sirve para validar un modelo nuevo antes de promoverlo a
