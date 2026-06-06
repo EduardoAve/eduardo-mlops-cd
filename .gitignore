@@ -1,0 +1,13 @@
+# Entorno virtual y cachés
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+.DS_Store
+.env
+
+# Artefactos del modelo: NO se versionan, se obtienen desde S3 en el pipeline
+artifacts/
+*.onnx

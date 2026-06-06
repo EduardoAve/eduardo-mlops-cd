@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+.venv
+venv
+.env
+.pytest_cache
+tests/
+model/
+scripts/
+.github/
+*.md
+# El modelo y el baseline SÍ entran a la imagen (COPY en el Dockerfile);
+# los datos de prueba no son necesarios en runtime.
+artifacts/test_data.csv

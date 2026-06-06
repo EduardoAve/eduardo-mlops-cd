@@ -1,0 +1,4 @@
+# Dependencias adicionales para la etapa `test` del pipeline (no van en la imagen).
+pytest==9.0.3
+pandas==3.0.3
+scikit-learn==1.9.0
