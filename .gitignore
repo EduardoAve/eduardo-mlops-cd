@@ -11,3 +11,7 @@ __pycache__/
 # Artefactos del modelo: NO se versionan, se obtienen desde S3 en el pipeline
 artifacts/
 *.onnx
+
+# Documentos de apoyo y temporales de Office
+*.docx
+~$*
