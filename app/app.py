@@ -41,7 +41,7 @@ def _cargar_ejemplo(valores):
 
 st.set_page_config(page_title=f"Predictor [{ENV}]", page_icon="🔬", layout="wide")
 
-st.title("🔬 Predictor de cáncer de mama")
+st.title("🔬 Predictor de cáncer de mama - V2")
 c_env, c_info = st.columns([1, 4])
 c_env.metric("Ambiente", ENV.upper())
 c_info.caption(
